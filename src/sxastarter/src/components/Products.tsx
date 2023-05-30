@@ -1,6 +1,13 @@
-import { Image, withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
+import { ImageField, Field, Image, withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
 import { ComponentProps } from 'lib/component-props';
-import { Product } from 'src/types/product';
+
+type Product = ComponentProps & {
+  fields: {
+    image: ImageField;
+    title: Field<string>;
+    price: Field<string>;
+  };
+};
 type ProductsProps = ComponentProps & {
   fields: {
     product_list: Product[];
