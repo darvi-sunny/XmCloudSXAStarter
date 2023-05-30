@@ -1,5 +1,13 @@
-import { Image } from '@sitecore-jss/sitecore-jss-nextjs';
-import { Product as ProductData } from 'src/types/product';
+import { Field, Image, ImageField } from '@sitecore-jss/sitecore-jss-nextjs';
+import { ComponentProps } from 'lib/component-props';
+
+type ProductData = ComponentProps & {
+  fields: {
+    image: ImageField;
+    title: Field<string>;
+    price: Field<string>;
+  };
+};
 
 function Product(props: ProductData): JSX.Element {
   return (
